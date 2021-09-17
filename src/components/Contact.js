@@ -1,6 +1,9 @@
 import React, { useState, useRef } from 'react'
+import { useDispatch } from 'react-redux'
+import { addForm } from '../store/formSlice';
 
 function Contact(){
+  const dispatch = useDispatch()
   const dataKosong = {
     fullname: "",
     email: "",
@@ -58,15 +61,21 @@ function Contact(){
 const handleSubmit = (event) => {
   if (errMsg !== "") {
       alert ("Terdapat data yang tidak sesuai")
+      resetData();
+      event.preventDefault();
   } else {
-      alert (`Pendaftar dengan nama "${data.fullname}" berhasil diterima`)
+    dispatch(addForm({
+      fullname: data.fullname,
+      email: data.email,
+      phone: data.phone,
+      nationality: data.nationality,
+      message: data.message,
+    }));
   }
-  resetData();
-  event.preventDefault();
 }
 
 const handleChangeSelectTag = (e) => {
-  setData({...data, kelas: e.target.value})
+  setData({...data, nationality: e.target.value})
   console.log("data: ",data )
 }
 
@@ -87,8 +96,6 @@ const resetData = () => {
         onSubmit={handleSubmit}
         className="col-md-8 col-form needs-validation"
         id="form"
-        // method="GET"
-        // novalidate
       >
         <h3>Contact Us</h3>
         <div className="form-signup">
@@ -110,7 +117,6 @@ const resetData = () => {
           value={data.email} 
           onChange={handleInput} 
           required/>
-          {/* <div className="invalid-feedback">Email address cannot be empty</div> */}
         </div>
         <div className="form-signup">
           <label>Phone Number</label>
@@ -121,11 +127,10 @@ const resetData = () => {
           value={data.phone} 
           onChange={handleInput} 
           required/>
-          {/* <div className="invalid-feedback">Phone cannot be empty</div> */}
         </div>
         <div className="form-signup">
           <h5>Nationality</h5>
-          <select name="nationality" id="nationality">
+          <select name="nationality" id="nationality" onChange={handleChangeSelectTag}>
             <option value="">--Choose one--</option>
             <option value="Indonesia">Indonesia</option>
             <option value="Malaysia">Malaysia</option>
@@ -135,66 +140,30 @@ const resetData = () => {
         <div className="form-signup">
           <h5>Message</h5>
           <textarea
+            name="message"
             rows="4"
             id="message"
             cols="63"
             placeholder="Your Full Name Here..."
-          ></textarea
-          ><br />
+            onChange={handleInput}
+            value={data.message}>
+          </textarea>
+          <br />
         </div>
-        <a
+        <span styles={{
+          color: 'red',
+          display: 'flex',
+          justifyContent: 'center',
+        }}>{errMsg}</span><br/>
+        <button
           className="btn btn-1"
-          href="/message"
+          // href="/message"
           role="button"
-          onClick={handleSubmit}
-          >Submit</a>
+          // onClick={handleSubmit}
+          Submit>
+        </button>
       </form>                
     </div>
-    {/* <script>
-      (function () {
-        "use strict";
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.querySelectorAll(".needs-validation");
-
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms).forEach(function (form) {
-          form.addEventListener(
-            "submit",
-            function (event) {
-              if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-
-              form.classNameList.add("was-validated");
-            },
-            false
-          );
-        });
-      })();
-
-      // Store
-      function submitForm() {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-          form.classNameList.add("was-validated");
-        } else {
-          var fullname = document.getElementById("fullname").value;
-          var email = document.getElementById("email").value;
-          var phone = document.getElementById("phone").value;
-          var nationality = document.getElementById("nationality").value;
-          var message = document.getElementById("message").value;
-          localStorage.setItem("fullnamevalue", fullname);
-          localStorage.setItem("emailvalue", email);
-          localStorage.setItem("phonevalue", phone);
-          localStorage.setItem("nationalityvalue", nationality);
-          localStorage.setItem("messagevalue", message);
-          return false;
-        }
-      }
-    </script> */}
   </>
     );
 }

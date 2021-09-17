@@ -26,7 +26,7 @@ class Home extends Component {
                   <ul className="navbar-nav">
                     {/* COBA DI BAGIAN SINI */}
                     {/* <li className="nav-item">
-                      <a className="nav-menu nav-link" href="#" style={{color: '#F47522'}}>{NavbarData}</a>
+                      <a className="nav-menu nav-link" href="#" style={{color: '#F47522'}}>HOME</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-menu nav-link" href="#" style={{color: '#19345E'}}>ABOUT</a>
@@ -37,16 +37,20 @@ class Home extends Component {
                     <li className="nav-item">
                       <a className="nav-menu nav-link" href="./contact_us.html" style={{paddingRight: '55px', color: '#19345E'}} >CONTACT</a>
                     </li> */}
-                    {/* {NavbarData.map((item,index) => {
-                        // return(
-                        //   <li key={index} className="nav-item">
-                        //         <Link to={item.path}>
-                        //             <span className="nav-menu nav-link" style={{color: '#19345E'}}>{item.title}</span>
-                        //         </Link>
-                        //     </li>
-                        // )
-                        {console.log("Navbar :", item)}
-                    })} */}
+                    {NavbarData.map((item,index) => {
+                        return(
+                          <li className="nav-item" key={index}>
+                            <Link to={item.path}>
+                            <span className="nav-menu nav-link" style={{color: "red"}}>{item.title}</span>
+                            </Link>
+                          </li>
+                          // <li key={index} className="nav-item">
+                          //       <Link to={item.path}>
+                          //           <span className="nav-menu nav-link" style={{color: '#19345E'}}>{item.title}</span>
+                          //       </Link>
+                          //   </li>
+                        )
+                    })}
                   </ul>
                 </div>
               </div>

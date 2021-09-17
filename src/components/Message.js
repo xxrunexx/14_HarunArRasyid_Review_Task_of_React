@@ -1,6 +1,8 @@
+import Contact from "./Contact";
+
 function Message(){
     return(
-    <body onload="showData()">
+    <body>
         <div class="background1"></div>
         <div class="background2"></div>
         <div class="main">
@@ -8,33 +10,27 @@ function Message(){
                 <tr>
                     <td>Full Name</td>
                     <td>:</td>
-                    <td id="showname"></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Email Address</td>
                     <td>:</td>
-                    <td id="showemail"></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Phone Number</td>
                     <td>:</td>
-                    <td id="showphone"></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Nationality</td>
                     <td>:</td>
-                    <td id="shownationality"></td>
+                    <td></td>
                 </tr>
             </table>
 
             <p id="desc">
-                <i
-                >Hi Anne, I’m Mike from Monsters, Inc. I’ve seen your previous project
-                and it was really amazing. And as you know our company are planning to
-                build new mobile application. I hope you can join us to develope this
-                application. We look forward to hearing from you and hope you’ll join
-                our project!</i
-                >
+                <i></i>
             </p>
             <hr />
 
@@ -45,14 +41,6 @@ function Message(){
             <a class="btn btn-warning" href="/" role="button" id="btn-home">Home</a>
             <img src="assets/img/img-dot@2x.png" id="dot" alt="" />
         </div>
-
-            {/* <script>
-            document.getElementById("showname").innerHTML=localStorage.getItem("fullnamevalue");
-            document.getElementById("showemail").innerHTML=localStorage.getItem("emailvalue");
-            document.getElementById("showphone").innerHTML=localStorage.getItem("phonevalue");
-            document.getElementById("shownationality").innerHTML=localStorage.getItem("nationalityvalue");
-            document.getElementById("desc").innerHTML=localStorage.getItem("messagevalue");
-            </script> */}
     </body>
     );
 }
