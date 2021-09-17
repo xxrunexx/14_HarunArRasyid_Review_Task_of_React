@@ -24,33 +24,18 @@ class Home extends Component {
                   </a>
                 <div className="collapse navbar-collapse" id="navbarNav">
                   <ul className="navbar-nav">
-                    {/* COBA DI BAGIAN SINI */}
-                    {/* <li className="nav-item">
-                      <a className="nav-menu nav-link" href="#" style={{color: '#F47522'}}>HOME</a>
+                    <li className="nav-item">
+                      <Link to={NavbarData[0].path} className="nav-menu nav-link" style={{color: '#F47522'}}>HOME</Link>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-menu nav-link" href="#" style={{color: '#19345E'}}>ABOUT</a>
+                      <Link to={NavbarData[1].path} className="nav-menu nav-link" style={{color: '#19345E'}}>ABOUT</Link>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-menu nav-link" href="#" style={{color: '#19345E'}}>EXPERIENCE</a>
+                      <Link to={NavbarData[2].path} className="nav-menu nav-link" style={{color: '#19345E'}}>EXPERIENCE</Link>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-menu nav-link" href="./contact_us.html" style={{paddingRight: '55px', color: '#19345E'}} >CONTACT</a>
-                    </li> */}
-                    {NavbarData.map((item,index) => {
-                        return(
-                          <li className="nav-item" key={index}>
-                            <Link to={item.path}>
-                            <span className="nav-menu nav-link" style={{color: "red"}}>{item.title}</span>
-                            </Link>
-                          </li>
-                          // <li key={index} className="nav-item">
-                          //       <Link to={item.path}>
-                          //           <span className="nav-menu nav-link" style={{color: '#19345E'}}>{item.title}</span>
-                          //       </Link>
-                          //   </li>
-                        )
-                    })}
+                      <Link to={NavbarData[3].path} className="nav-menu nav-link" style={{paddingRight: '55px', color: '#19345E'}}>CONTACT</Link>
+                    </li>
                   </ul>
                 </div>
               </div>

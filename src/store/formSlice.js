@@ -1,7 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-const initialValue = {}
+const initialValue = {
+    fullname: "",
+    email: "",
+    phone: "",
+    nationality: "",
+    message: "",
+}
 
 export const formSlice = createSlice({
     name: "form",
@@ -10,8 +16,8 @@ export const formSlice = createSlice({
     },
     reducers:{
         addForm:(state,action)=> {
-            state.forms = [action.payload, ...state.forms];
-            // setTodos(newTodos);
+            state.forms = action.payload;
+            // state.forms = [action.payload, ...state.forms];
         }
     }
 })

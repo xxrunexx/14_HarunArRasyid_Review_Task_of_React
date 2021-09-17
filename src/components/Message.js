@@ -1,6 +1,7 @@
-import Contact from "./Contact";
+import { useSelector } from 'react-redux'
 
 function Message(){
+    const forms = useSelector(state => state.form.forms)
     return(
     <body>
         <div class="background1"></div>
@@ -10,27 +11,27 @@ function Message(){
                 <tr>
                     <td>Full Name</td>
                     <td>:</td>
-                    <td></td>
+                    <td>{forms.fullname}</td>
                 </tr>
                 <tr>
                     <td>Email Address</td>
                     <td>:</td>
-                    <td></td>
+                    <td>{forms.email}</td>
                 </tr>
                 <tr>
                     <td>Phone Number</td>
                     <td>:</td>
-                    <td></td>
+                    <td>{forms.phone}</td>
                 </tr>
                 <tr>
                     <td>Nationality</td>
                     <td>:</td>
-                    <td></td>
+                    <td>{forms.nationality}</td>
                 </tr>
             </table>
 
             <p id="desc">
-                <i></i>
+                <i>{forms.message}</i>
             </p>
             <hr />
 

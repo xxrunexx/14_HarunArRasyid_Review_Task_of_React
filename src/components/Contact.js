@@ -1,16 +1,20 @@
 import React, { useState, useRef } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 import { addForm } from '../store/formSlice';
+import { useHistory } from 'react-router';
+
+const dataKosong = {
+  fullname: "",
+  email: "",
+  phone: "",
+  nationality: "",
+  message: "",
+}
+
 
 function Contact(){
-  const dispatch = useDispatch()
-  const dataKosong = {
-    fullname: "",
-    email: "",
-    phone: "",
-    nationality: "",
-    message: "",
-  }
+  const dispatch = useDispatch();
+  const history = useHistory();
   // UseState Data Kosong
   const [data, setData] = useState(dataKosong);
   const nationalitySelect = useRef(null);
@@ -59,19 +63,17 @@ function Contact(){
 
 // HandleSubmit harus diedit
 const handleSubmit = (event) => {
+  event.preventDefault();
   if (errMsg !== "") {
       alert ("Terdapat data yang tidak sesuai")
       resetData();
-      event.preventDefault();
-  } else {
-    dispatch(addForm({
-      fullname: data.fullname,
-      email: data.email,
-      phone: data.phone,
-      nationality: data.nationality,
-      message: data.message,
-    }));
+  } 
+  else 
+  {
+    dispatch(addForm(data));
+    history.push('/message');
   }
+  
 }
 
 const handleChangeSelectTag = (e) => {
@@ -96,6 +98,8 @@ const resetData = () => {
         onSubmit={handleSubmit}
         className="col-md-8 col-form needs-validation"
         id="form"
+        // method="GET"
+        // novalidate
       >
         <h3>Contact Us</h3>
         <div className="form-signup">
@@ -146,7 +150,8 @@ const resetData = () => {
             cols="63"
             placeholder="Your Full Name Here..."
             onChange={handleInput}
-            value={data.message}>
+            value={data.message}
+            required>
           </textarea>
           <br />
         </div>
@@ -155,13 +160,13 @@ const resetData = () => {
           display: 'flex',
           justifyContent: 'center',
         }}>{errMsg}</span><br/>
-        <button
+        <a
           className="btn btn-1"
           // href="/message"
           role="button"
-          // onClick={handleSubmit}
-          Submit>
-        </button>
+          onClick={handleSubmit}>
+          Submit
+        </a>
       </form>                
     </div>
   </>
