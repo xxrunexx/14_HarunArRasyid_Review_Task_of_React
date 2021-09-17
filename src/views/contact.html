@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Contact Us</title>
+</head>
+<body>
+        <div class="row">
+            <div class="col-sm-5" style="background-color: #19345E;">
+                <div>
+                    <img src="assets/img/charles-rRWiVQzLm7k-unsplash.jpg" id="background-logo" alt="">
+                </div>   
+                <div>
+                    <img src="assets/img/logo-ALTA@2x.png" style="padding-top: 320px; padding-left: 170px;" alt="">
+                </div>
+            </div>
+            <form class="col-sm-7 col-form needs-validation" id="form" novalidate>
+                <h3>Contact Us</h3>
+                <div class="form-signup">
+                    <label for="validationCustom03" class="form-label">Full name</label>
+                    <input type="text" class="form-control" id="fullname" required>
+                    <div class="invalid-feedback">
+                      Full name cannot be empty
+                    </div>
+                </div>
+                <div class="form-signup">
+                    <label for="validationCustom03" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" required>
+                    <div class="invalid-feedback">
+                      Email address cannot be empty
+                    </div>
+                </div>
+                <div class="form-signup">
+                    <label for="validationCustom03" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="phone" required>
+                    <div class="invalid-feedback">
+                      Phone cannot be empty
+                    </div>
+                </div>
+                <div class="form-signup">
+                    <h5>Nationality</h5>
+                    <select name="nationality" id="nationality">
+                        <option value="">--Choose one--</option>
+                        <option value="1">Indonesia</option>
+                        <option value="2">Malaysia</option>
+                        <option value="3">Singapore</option>
+                    </select>
+                </div>
+                <div class="form-signup">
+                    <h5>Message</h5>
+                    <textarea rows="4" cols="63" placeholder="Your Full Name Here..."></textarea><br>
+                </div>
+                <button class="btn btn-1" href="#" role="button">Submit</a>
+            </form>
+        </div>
+       <script>
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+                })
+        })()
+       </script>
+</body>
+</html>

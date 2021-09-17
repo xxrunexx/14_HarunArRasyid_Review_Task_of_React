@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap) ;
+}
+
+body{
+    background-size: 100%;
+    font-family: 'Roboto', sans-serif;
+    /* overflow: hidden; */
+}
+
+.navbar{
+        display: flex;
+        align-items: center;
+    }
+    
+.collapse {
+    display: flex;
+    width: 40%;
+    justify-content:end;
+}
+
+.navbar-nav{
+    font-size: 13px;
+    display: flex;
+}
+
+.nav-item{
+    padding-left: 25px;
+}
+
+#logo {
+    border-radius: 50%;
+    margin-top: 150px;
+    margin-left: 148px;
+}
+
+.text-highlight{
+    color: #19345E;
+}
+
+.content-text{
+    font-weight: 500;
+}
+
+.btn-1{
+    border: none;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 16px;
+    border-radius: 20px;
+    color: white;
+    margin-top: 10px;
+    background-color: #F47522;
+}
+
+.col-form{
+    font-family: 'Roboto', sans-serif;
+    padding-top: 100px;
+    color: #19345E;
+}
+
+.form-signup{
+    padding-top: 20px;
+}
+
+#fullname,
+#email,
+#phone, 
+#nationality
+{
+    width: 500px;
+}
+
+
+#background-logo{
+    width: 560px; 
+    height: 715px; 
+    opacity: 100%; 
+    position: absolute;
+    background-color: #5e1919;
+}
+
+.overlay{
+    position: absolute; 
+    top: 40%;
+    left: 25% ;
+    width: 50%;
+    opacity: .8;
+
+}
+
+.hero{ 
+   background: linear-gradient(
+    29deg,
+    rgba(25, 52, 94, 0.4) 0%,
+    rgba(25, 52, 94, 0.65) 100%
+  ),url("../img/charles-rRWiVQzLm7k-unsplash.jpg");
+    background-size:cover;
+
+    background-repeat: no-repeat;
+    background-position: 0 0px;
+    
+}
+
+#form {
+    top: -80px;
+}
+
+p,td{
+    color: #19345E;
+}
+
+.main{
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 2px solid grey;
+    width: 664px;
+    padding: 45px 49px;
+    background-color: #FFFFFF;
+    border: 1px solid #CCD7EB;
+    border-radius: 10px;
+}
+
+.background1{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height:75%;
+    width:100%;
+    background-color: #FFFFFF;;
+}
+.background2{
+    position: absolute;
+    z-index: -1;
+    top: 75%;
+    left: 0;
+    height:25%;
+    width:100%;
+    background-color: #EDF6FF;
+}
+
+td:nth-child(2){
+    padding:0 10px 0 40px;
+}
+
+#desc{
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+hr{
+    width: 50%;
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+
+#btn-home{
+    border-radius: 30px;
+    border: none;
+    width: 100px;
+    background-color: #F47522;
+    color: #FFFFFF;
+}
+
+#dot{
+    position: absolute;
+    left: 300px;
+    top: 530px;
+    width: 105px;
+}
